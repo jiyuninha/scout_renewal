@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="bottom">
+    <material name="black">
+        <color rgba="0.1 0.1 0.1 0.85"/>
+    </material>
+
+    <xacro:macro name="ex_bottom"> 
+        <!--robot's joint and link-->
+        <joint name="bottom_joint" type="fixed">
+            <origin xyz="0.0 0.0 0.5" rpy="0.0 0.0 0.0"/>
+            <parent link="base_link"/>
+            <child link="bottom_link"/>
+            <axis xyz="0 0 0" rpy="0 0 0" />
+        </joint>
+
+        <link name="bottom_link">
+            <visual>
+                <origin xyz="0.185 -0.24 -0.38" rpy="0 0 3.141"/>
+                <geometry>
+                    <mesh scale="0.00085 0.00085 0.0008" filename="package://scout_description/meshes/v1_bottom.stl"/>
+                </geometry>
+                <material name="black"/> 
+            </visual>
+        </link>
+    </xacro:macro>
+</robot>

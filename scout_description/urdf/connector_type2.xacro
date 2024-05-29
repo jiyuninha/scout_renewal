@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="connector_type2">
+    <xacro:macro name="connector_type2" params="connector_prefix">
+
+        <joint name="{connector_prefix}_connection2_joint" type="revolute">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <parent link="connection1_link"/>
+            <child link="connection2_link"/>
+            <axis xyz="0 0 0" rpy="0 0 0" />
+        </joint>
+
+        <link name="{connector_prefix}_connection2_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh scale="0.00085 0.00085 0.0008" filename="package://scout_description/meshes/v1_420_connector.stl"/>
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+</robot>
